@@ -7,25 +7,10 @@
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "uni-app",
     "navigationStyle": "custom",
+    "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "fontSize": "30px",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/follow/follow",
-        "text": "我的"
-      }
-    ]
   },
   "usingComponents": {}
 }
