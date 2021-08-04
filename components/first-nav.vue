@@ -30,7 +30,7 @@
 	height: 35px;
 	line-height: 35px;
 	margin: 0 auto;
-	background-color: #000000;
+	z-index: 20;
 }
 
 .icon{
