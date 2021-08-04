@@ -1,0 +1,1 @@
+<view class="videoPlayer"><video class="video" autoplay="{{false}}" loop="{{true}}" controls="{{false}}" src="http://video.jishiyoo.com/1eedc49bba7b4eaebe000e3721149807/d5ab221b92c74af8976bd3c1473bfbe2-4518fe288016ee98c8783733da0e2da4-ld.mp4"></video></view>

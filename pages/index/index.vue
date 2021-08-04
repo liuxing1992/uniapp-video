@@ -1,11 +1,23 @@
 <template>
 	<view class="content">
-		{{title}}
+		<first-nav></first-nav>
+		<vidoe-list></vidoe-list>
+		<tab></tab>
+		
 	</view>
 </template>
 
 <script>
+	import tab from '../../components/tab.vue'
+	import firstNav from '../../components/first-nav.vue'
+	import vidoeList from '../../components/videoList.vue'
 	export default {
+		components:{
+			tab,
+			firstNav,
+			vidoeList
+		},
+		
 		data() {
 			return {
 				title: 'Hello'
@@ -26,6 +38,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		width: 100%;
+		height: 100%;
 	}
 
 	.logo {
