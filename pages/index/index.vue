@@ -1,9 +1,9 @@
 <template>
 	<view class="content">
 		<first-nav></first-nav>
-		<vidoe-list></vidoe-list>
+		<vidoe-list :lists="list"></vidoe-list>
 		<tab></tab>
-		
+
 	</view>
 </template>
 
@@ -11,23 +11,37 @@
 	import tab from '../../components/tab.vue'
 	import firstNav from '../../components/first-nav.vue'
 	import vidoeList from '../../components/videoList.vue'
+
 	export default {
-		components:{
+		components: {
 			tab,
 			firstNav,
 			vidoeList
+
 		},
-		
+
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				list: []
 			}
 		},
 		onLoad() {
-
+			this.getVideos()
 		},
 		methods: {
-
+			getVideos() {
+				uni.request({
+					url: 'http://localhost:80/api/videos.json',
+					success: (res) => {
+						console.log(res)
+						this.list = res.data.list
+					},
+					fail() {
+						console.log('fail')
+					}
+				})
+			}
 		}
 	}
 </script>

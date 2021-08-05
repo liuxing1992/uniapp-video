@@ -49,7 +49,6 @@
 	float: left;
 	width: 20%;
 	color: #FFFFFF;
-	background-color: #000000;
 	height: 50px;
 	text-align: center;
 	font-size: 20px;
