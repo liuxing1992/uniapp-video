@@ -1,21 +1,25 @@
 <template>
 	<view class="videoList">
 		<view class="swiper-box">
-			<swiper :vertical="true" class="swiper">
+			<swiper :vertical="true" class="swiper" 
+			
+			 @change="changePage" 
+			 @touchend="touchend"
+			@touchstart="touchStart">
 
-
-				<swiper-item v-for="item of list" :key= "item.id">
+				<!-- ref 父 调用子 方法 -->
+				<swiper-item v-for="(item , index) of list" :key="item.id">
 					<view class="swiper-item" style="color: #555555;">
-						<video-player :video = "item"></video-player>
-						
+						<video-player :video="item" :index = "index" ref="player" @follow ='follow'></video-player>
+
 					</view>
-					
+
 					<view class="left-box">
-						<list-left ></list-left>
+						<list-left :item = "item"></list-left>
 					</view>
-					
+
 					<view class="right-box">
-						<list-right></list-right>
+						<list-right ref="listRight" :item ="item"></list-right>
 					</view>
 				</swiper-item>
 
@@ -30,11 +34,15 @@
 	import videoPlayer from './videoPlayer.vue'
 	import listLeft from './listLeft.vue'
 	import listRight from './listRight.vue'
+	var time = null
 	export default {
-		props:['lists'],
+		props: ['lists'],
 		name: "videoList",
 		data() {
 			return {
+				pageStartY: 0,
+				pageEndY: 0,
+				page: 0,
 				list: [{
 						id: 1,
 						src: 'http://video.jishiyoo.com/1eedc49bba7b4eaebe000e3721149807/d5ab221b92c74af8976bd3c1473bfbe2-4518fe288016ee98c8783733da0e2da4-ld.mp4',
@@ -72,11 +80,47 @@
 			listLeft,
 			listRight
 		},
-		watch:{
-			lists(){
+		watch: {
+			lists() {
 				this.list = lists
 			}
+		},
+		methods: {
+			changePage(res) {
+				// clearTimeout(time)
+				this.page = res.detail.current
+				time = setTimeout(() => {
+					if (this.pageStartY > this.pageEndY) {
+						this.pageEndY = 0
+						this.pageStartY = 0
+						// 索引
+						this.$refs.player[this.page].player()
+						this.$refs.player[this.page - 1].pause()
+					} else {
+						this.pageEndY = 0
+						this.pageStartY = 0
+						this.$refs.player[this.page].player()
+						this.$refs.player[this.page + 1].pause()
+					}
+				}, 1)
+			},
+			touchStart(res) {
+
+				this.pageStartY = res.changedTouches[0].pageY
+
+			},
+
+			touchend(res) {
+				this.pageEndY = res.changedTouches[0].pageY
+
+			},
+			
+			follow(){
+				console.log('66666')
+				this.$refs.listRight[this.page].doubleChange()
+			}
 		}
+		
 	}
 </script>
 
@@ -99,21 +143,21 @@
 		width: 100%;
 		height: 100%;
 	}
-	
-	.swiper-item{
+
+	.swiper-item {
 		width: 100%;
 		height: 100%;
 		z-index: 19;
 	}
-	
-	.left-box{
+
+	.left-box {
 		z-index: 20;
 		position: absolute;
 		bottom: 50px;
 		left: 20px;
 	}
-	
-	.right-box{
+
+	.right-box {
 		z-index: 20;
 		position: absolute;
 		bottom: 50px;

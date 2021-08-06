@@ -1,0 +1,50 @@
+
+.cityContent {
+	width: 100%;
+	background: #000000;
+	z-index: 18;
+}
+.conlation {
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+	color: white;
+	padding-top: 70px;
+	color: #999;
+}
+.conlation-left{
+	float: left;
+	font-size: 15px;
+	padding-left: 15px;
+}
+.conlation-right{
+	float: right;
+	font-size: 15px;
+	padding-right: 16px;
+}
+.video-list{
+	width: 100%;
+	overflow: hidden;
+	background-color: #000000;
+}
+.item{
+	width: 50%;
+	float: left;
+	position: relative;
+}
+.video{
+	width: 92%;
+	height: 300px;
+	margin-left: 4%;
+}
+.img{
+	position: absolute;
+	bottom: 7px;
+	right: 15px;
+}
+.image-box{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+

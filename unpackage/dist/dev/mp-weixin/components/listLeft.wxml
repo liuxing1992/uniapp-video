@@ -1,1 +1,1 @@
-<view class="listLeft"><view class="author">这只是</view><view class="title">sa大撒花afa开ssa大撒花afa开ssa大撒花afa开ssa大撒花afa开ssa大撒花afa开ssa大撒花afa开s1111111111111</view><view class="music">guoge</view></view>
+<view class="listLeft"><view class="author">{{''+item.author+''}}</view><view class="title">{{''+item.title+''}}</view><view class="box"><view class="music">{{''+item.music+''}}</view></view></view>

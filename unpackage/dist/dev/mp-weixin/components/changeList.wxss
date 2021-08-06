@@ -1,0 +1,60 @@
+
+.changeList {
+	width: 100%;
+	background-color: #000000;
+	z-index: 19;
+}
+.box {
+	background-color: #3F536E;
+	margin-top: 10px;
+	padding: 5px;
+}
+.title {
+	height: 40px;
+	line-height: 40px;
+	margin-left: 15px;
+	color: #FFFFFF;
+	font-size: 12px;
+}
+.currentCity {
+	color: white;
+	font-size: 12px;
+	margin-left: 15px;
+	height: 30px;
+	line-height: 30px;
+}
+.hotlist {
+	width: 100%;
+	overflow: hidden;
+}
+.item {
+	width: 30%;
+	height: 25px;
+	line-height: 25px;
+	font-size: 15px;
+	float: left;
+	background-color: #333333;
+	margin-left: 2.5%;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #aaaaaa;
+}
+.box-list {
+	/* padding: 8px 15px; */
+}
+.initial {
+	height: 25px;
+	line-height: 25px;
+	background-color: #000000;
+	padding-left: 10px;
+	color: white;
+	font-size: 11px;
+}
+.city-name {
+	background-color: #333333;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	font-size: 14px;
+}
+
