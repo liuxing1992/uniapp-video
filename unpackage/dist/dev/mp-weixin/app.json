@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/changeCity/changeCity",
-    "pages/city/city",
     "pages/index/index",
     "pages/message/message",
-    "pages/follow/follow"
+    "pages/follow/follow",
+    "pages/changeCity/changeCity",
+    "pages/city/city"
   ],
   "subPackages": [],
   "window": {
@@ -13,6 +13,16 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/city/city"
+      }
+    ]
   },
   "usingComponents": {}
 }

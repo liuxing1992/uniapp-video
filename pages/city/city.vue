@@ -3,7 +3,7 @@
 		
 		<first-nav></first-nav>
 		<city-content></city-content>
-		<tab class=""></tab>
+		<tab ></tab>
 	</view>
 </template>
 

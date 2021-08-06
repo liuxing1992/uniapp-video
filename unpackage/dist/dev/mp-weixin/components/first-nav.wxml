@@ -1,1 +1,1 @@
-<view class="firstNav"><view class="iconfont iconsousuo icon"></view><view class="middle"><view class="text">推荐</view><view class="text">同城</view></view></view>
+<view class="firstNav"><view class="iconfont iconsousuo icon"></view><view class="middle"><view data-event-opts="{{[['tap',[['click1',['$event']]]]]}}" class="text" bindtap="__e">推荐</view><view data-event-opts="{{[['tap',[['click2',['$event']]]]]}}" class="text" bindtap="__e">同城</view></view></view>

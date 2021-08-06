@@ -1,7 +1,7 @@
 <template>
 	<view class="changeList">
 
-		<scroll-view class="scrolly" scroll-y="true">
+		<scroll-view class="scrolly" scroll-y="true" :scroll-into-view="viewId">
 
 			<view class="city-box">
 				<view class="box">
@@ -28,12 +28,12 @@
 				</view>
 
 
-				<view class="box-list" v-for="item in city">
-					<view class="initial">
+				<view class="box-list" v-for="item in city" :key="item.initial">
+					<view class="initial" :id="item.initial">
 						{{item.initial}}
 					</view>
 
-					<view class="city-name" v-for="itemChild in item.list">
+					<view class="city-name" v-for="itemChild in item.list" :key ='item.initial'>
 						{{itemChild.name}}
 					</view>
 				</view>
@@ -54,14 +54,14 @@
 		name: "changeList",
 		data() {
 			return {
+				viewId:'',
 				list: ['深圳', '北京', '上海', '杭州', '武汉', '南昌', '西安', '宁波', '长沙', '宜春']
 
 			};
 		},
 		watch: {
 			letter() {
-
-				console.log('watch' + this.letter)
+				this.viewId = this.letter
 			}
 		}
 
@@ -71,6 +71,7 @@
 <style>
 	.changeList {
 		width: 100%;
+		height: 100%;
 		background-color: #000000;
 		z-index: 19;
 	}
@@ -134,5 +135,10 @@
 		line-height: 40px;
 		padding-left: 10px;
 		font-size: 14px;
+	}
+	
+	.scrolly{
+		width: 100%;
+		height: 100%;
 	}
 </style>

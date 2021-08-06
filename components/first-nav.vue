@@ -3,9 +3,9 @@
 		<view class="iconfont iconsousuo icon"></view>
 		<view class="middle">
 			
-			<view class="text">推荐</view>
+			<view @click="click1" class="text">推荐</view>
 			
-			<view class="text">同城</view>
+			<view @click="click2" class="text">同城</view>
 		</view>
 	</view>
 </template>
@@ -17,7 +17,27 @@
 			return {
 				
 			};
+		},
+		
+		methods:{
+			click1(){
+				console.log("click")
+				uni.switchTab({
+					url:'/pages/index/index'
+					
+				})
+			},
+			
+			click2(){
+				uni.switchTab({
+					url:'/pages/city/city',
+					fail: (res) => {
+						console.log(res)
+					}
+				})
+			}
 		}
+		
 	}
 </script>
 
